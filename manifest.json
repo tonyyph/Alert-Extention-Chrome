@@ -1,0 +1,34 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "version": "0.1.4",
+  "manifest_version": 3,
+  "offline_enabled": true,
+  "name": "Timer, Alarm & Stopwatch",
+  "permissions" : ["storage", "alarms", "contextMenus"],
+  "homepage_url": "https://mybrowseraddon.com/timer.html",
+  "description": "An easy-to-use and lite timer, alarm, and stopwatch for your browser.",
+  "commands": {
+    "_execute_action": {}
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "data/popup/popup.html",
+    "default_title": "Timer, Alarm & Stopwatch",
+    "default_icon": {
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+    }
+  },
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "64": "data/icons/64.png",
+    "128": "data/icons/128.png"
+  }
+}

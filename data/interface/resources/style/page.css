@@ -1,0 +1,269 @@
+.page {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  outline: none;
+  overflow-y: auto;
+  visibility: hidden;
+  box-sizing: border-box;
+  animation: fade-in-horizontal 200ms ease-out forwards !important;
+}
+
+.timer-page, .alarm-page, .stopwatch-page {
+  overflow: hidden;
+  margin-left: 15px;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timer-page-show, .alarm-page-show, .stopwatch-page-show {
+  display: block;
+}
+
+.timer-page-items, .alarm-page-items {
+  border: 0;
+  display: flex;
+  margin-top: 15px;
+  overflow-y: auto;
+  flex-flow: column;
+  overflow-x: hidden;
+  max-height: calc(100vh - 75px);
+}
+
+.timer-page-item, .alarm-page-item {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 5px;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: solid 1px #636363;
+  transition: 300ms ease all;
+  justify-content: space-between;
+  animation: fade-in-horizontal 0.3s ease-out forwards;
+}
+
+.timer-page-edit, .alarm-page-edit, .snooze-page-edit {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0;
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  padding-top: 65px;
+  visibility: hidden;
+  overflow-x: hidden;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  justify-content: center;
+}
+
+.timer-page-add-timer, .alarm-page-add-alarm {
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px !important;
+  text-transform: uppercase;
+}
+
+.timer-page-no-timers::before, 
+.alarm-page-no-alarms::before {
+  bottom: 0;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 1px;
+  top: calc(50% - 10px);
+  left: calc(50% - 80px);
+}
+
+.timer-page-no-timers::before {content: 'NO TIMERS'}
+.alarm-page-no-alarms::before {content: 'NO ALARMS'}
+
+.timer-page-edit-name, .alarm-page-edit-name {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.timer-page-edit_options, .alarm-page-edit_options {
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: stretch;
+  justify-content: center;
+  border-top: solid 1px #636363;
+}
+
+.timer-page-edit_options > .button, .alarm-page-edit_options > .button {
+  padding: 0;
+  height: 48px;
+  line-height: 48px;
+  letter-spacing: 1px;
+}
+
+.timer-page-edit-time, .alarm-page-edit-time {
+  display: flex;
+  color: #df574c;
+  padding: 10px 0;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-bottom: 15px;
+  font-family: monospace;
+  justify-content: center;
+  width: calc(100vw - 30px);
+  border: solid 1px #636363;
+  background-color: #424242;
+}
+
+.timer-page-edit-time span, .alarm-page-edit-time span {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.timer-page-edit-time span[contenteditable], .alarm-page-edit-time span[contenteditable] {
+  width: 64px;
+  cursor: text;
+  padding: 10px;
+  border: solid 1px #636363;
+  background-color: #fefefe;
+}
+
+.timer-page-edit-time span:focus, .alarm-page-edit-time span:focus {
+  outline: solid 1px #fff;
+}
+
+.timer-page-edit-name > span, .alarm-page-edit-name > span {
+  margin: 0;
+  color: #fff;
+  width: 82px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 15px 10px 15px 5px;
+}
+
+.timer-page-edit-time span svg, .alarm-page-edit-time span svg {
+  fill: #fff;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.timer-page-edit-time > div, .alarm-page-edit-time > div {
+  display: flex;
+  margin: 0 5px;
+  padding: 0 5px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timer-page-edit-title, .alarm-page-edit-title {
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: default !important;
+  font-family: arial, sans-serif;
+}
+
+.timer-page-edit-time-colon, .alarm-page-edit-time-colon {
+  color: #fff;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 30px !important;
+}
+
+.timer-page-edit-show, .alarm-page-edit-show, .snooze-page-edit-show {
+  animation: fade-in-horizontal 0.3s ease-out forwards;
+}
+
+.timer-page-edit-sounds, .timer-page-edit-dates, .alarm-page-edit-sounds, .alarm-page-edit-dates {
+  display: flex;
+  flex-flow: row;
+}
+
+.timer-page-edit-sounds, .alarm-page-edit-sounds {
+  margin-left: auto;
+}
+
+.timer-page-edit-sounds > span, .timer-page-edit-dates > span, .alarm-page-edit-sounds > span, .alarm-page-edit-dates > span {
+  margin: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 2px;
+  align-items: center;
+  font-family: monospace;
+  justify-content: center;
+  border: solid 1px #636363;
+  background-color: #424242;
+  transition: 300ms ease all;
+}
+
+.timer-page-edit-sounds > span:hover, .timer-page-edit-dates > span:hover, .alarm-page-edit-sounds > span:hover, .alarm-page-edit-dates > span:hover {
+  background-color: #333333;
+}
+
+.timer-page-edit-sound-active, .timer-page-edit-date-active, .alarm-page-edit-sound-active, .alarm-page-edit-date-active, .alarm-page-item-date-active {
+  color: #fff !important;
+  background-color: #df574c !important;
+}
+
+.timer-page-edit-close, .alarm-page-edit-close, .snooze-page-edit-close {
+  top: 12px;
+  right: 10px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 12px 15px;
+  position: absolute;
+  background-color: #333;
+  font-family: monospace;
+  border: solid 1px #636363;
+  transition: 300ms ease all;
+}
+
+.timer-page-edit-close:hover, .alarm-page-edit-close:hover, .snooze-page-edit-close:hover {
+  background-color: #df574c;
+}
+
+.timer-page-edit-sound-wrapper, .timer-page-edit-date-wrapper, .alarm-page-edit-sound-wrapper, .alarm-page-edit-date-wrapper {
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+}
+
+.timer-page-edit-sound-wrapper > span, .timer-page-edit-date-wrapper > span, .alarm-page-edit-sound-wrapper > span, .alarm-page-edit-date-wrapper > span {
+  margin: 0;
+  width: 82px;
+  color: #fff;
+  padding: 15px;
+  min-width: 82px;
+  max-width: 82px;
+  font-size: 12px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,96 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  border: 0;
+  padding: 0;
+  color: #fff;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  font-size: 12px;
+  flex-flow: column;
+  height: calc(100% - 1px);
+  background-color: #3b3a3f;
+  font-family: arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  border-bottom: solid 1px #df574c;
+}
+
+.container .name, 
+.container .time {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 12px;
+  user-select: none;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.container .name {
+  float: left;
+  margin-left: 10px;
+}
+
+.container .time {
+  float: right;
+  margin-right: 10px;
+}
+
+.loader {
+  flex: 1;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  margin: auto;
+  height: auto;
+  background: url('resources/alarm.gif') no-repeat center calc(50% - 5%);
+  background-size: 256px;
+}
+
+.controls {
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.controls .button {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  width: 100%;
+  height: 48px;
+  outline: none;
+  margin-top: 1px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 48px;
+  user-select: none;
+  text-align: center;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  transition: 300ms ease all;
+  border-top: solid 1px #dc5559;
+  font-family: arial, sans-serif;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.controls .button:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+#snooze {
+  display: none;
+  border-bottom: solid 1px #dc5559;
+}

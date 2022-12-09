@@ -1,0 +1,25 @@
+.toolbar {
+  padding: 0;
+  z-index: -1;
+  height: 48px;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  border: solid 1px #636363;
+}
+
+.toolbar > span {
+  border: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+  transition: 300ms ease all;
+  font-family: arial, sans-serif;
+  background: url('../icons/add.svg') no-repeat calc(100% - 16px) center;
+}
+
+.toolbar > span:hover {
+  background-color: rgba(0,0,0,0.1);
+}

@@ -1,0 +1,43 @@
+.button {
+  flex: 1;
+  margin: 0;
+  border: 0;
+  color: #fff;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 0;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #424242;
+  text-transform: uppercase;
+  transition: 300ms ease all;
+  font-family: arial, sans-serif;
+}
+
+.button-dark {background-color: #424242}
+.button-danger {background-color: #df574c}
+.button-primary {background-color: #70838d}
+
+.button-dark {
+  color: #fff;
+}
+
+.button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button[data-stopwatch_options] {
+  display: none;
+}
+
+.button-show {
+  display: inline-block !important;
+}

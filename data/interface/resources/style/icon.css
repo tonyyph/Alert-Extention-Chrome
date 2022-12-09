@@ -1,0 +1,39 @@
+[class*='icon-'] {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: solid 1px #636363;
+  transition: 300ms ease all;
+  background-size: 12px !important;
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+[class*='icon-']:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+[class*='icon-'] svg {
+  fill: #fff;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.icon-stop {background: url('../icons/stop.svg') no-repeat center center}
+.icon-play {background: url('../icons/play.svg') no-repeat center center}
+.icon-week {background: url('../icons/week.svg') no-repeat center center}
+.icon-pause {background: url('../icons/pause.svg') no-repeat center center}
+.icon-remove {background: url('../icons/remove.svg') no-repeat center center}
+.icon-decrease {background: url('../icons/decrease.svg') no-repeat center center}
+.icon-increase {background: url('../icons/increase.svg') no-repeat center center}
+
+.icon-week {
+  border: 0;
+  cursor: default;
+  margin-top: -1px !important;
+  margin-right: 1px !important;
+  background-color: #de574c !important;
+}

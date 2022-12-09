@@ -1,0 +1,22 @@
+.validation {
+  top: 12px;
+  left: 12px;
+  opacity: 0;
+  padding: 0;
+  color: #fff;
+  margin: auto;
+  height: 42px;
+  position: fixed;
+  font-size: 12px;
+  line-height: 42px;
+  text-align: center;
+  visibility: hidden;
+  box-sizing: border-box;
+  font-family: monospace;
+  width: calc(100% - 76px);
+  background-color: #df574c;
+}
+
+.validation-show {
+  animation: fade-in-horizontal 0.2s ease-out forwards;
+}

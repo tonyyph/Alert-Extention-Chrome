@@ -1,0 +1,34 @@
+.footer {
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  position: absolute;
+  background-color: #df574c;
+}
+
+.footer table {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.footer table tr td {
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  text-align: center;
+  transition: 300ms ease all;
+}
+
+.footer table tr td:hover {
+  background-color: #bf4b41;
+}
+
+.footer table tr td svg {
+  fill: #fff;
+  pointer-events: none;
+  vertical-align: middle;
+}

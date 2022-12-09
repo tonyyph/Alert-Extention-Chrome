@@ -1,0 +1,43 @@
+.snooze-page-edit-show {
+  z-index: 2;
+}
+
+.snooze-page-edit {
+  color: #fff;
+  margin: auto;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.snooze-page-edit p {
+  margin: 5px 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.snooze-page-edit input {
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.snooze-page-edit label {
+  font-size: 12px;
+  vertical-align: middle;
+  font-family: arial, sans-serif;
+}
+
+.snooze-page-edit-title {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 10px;
+  padding: 15px !important;
+  font-family: arial, sans-serif;
+  border-bottom: solid 1px #df574c;
+}
+
+.snooze-page-edit #snooze-close {
+  margin: 0;
+  width: 100vw;
+  padding: 15px;
+}

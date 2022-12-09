@@ -1,0 +1,26 @@
+.tooltip {
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+  padding: 0;
+  left: 130px;
+  color: #fff;
+  height: 38px;
+  position: fixed;
+  font-size: 12px;
+  line-height: 38px;
+  text-align: center;
+  visibility: hidden;
+  margin-right: auto;
+  display: inline-block;
+  font-family: monospace;
+  box-sizing: border-box;
+  background-color: #df574c;
+  width: calc(100vw - 130px);
+}
+
+.tooltip-show {
+  animation-delay: 300ms;
+  animation: fade-in-horizontal 500ms ease-out forwards;
+}

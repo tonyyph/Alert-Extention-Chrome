@@ -1,0 +1,71 @@
+.stopwatch-page-timer {
+  width: auto;
+  margin-top: 10px;
+  min-height: 194px;
+  text-align: center;
+  position: relative;
+  border: solid 1px #636363;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.stopwatch-page-timer p {
+  font-size: 16px;
+  position: absolute;
+  letter-spacing: 1px;
+  top: calc(50% - 64px);
+  left: calc(50% - 68px);
+  font-family: monospace;
+}
+
+.stopwatch-page-buttons {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  border-top: solid 1px #636363;
+}
+
+.stopwatch-page-buttons span {
+  width: 150px;
+  margin: 10px 0;
+  padding: 15px 0;
+  cursor: pointer;
+  display: inline-block;
+  border: solid 1px #636363;
+}
+
+.stopwatch-page-laps {
+  flex: 1;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  overflow-y: auto;
+  margin-top: 10px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-height: calc(100vh - 225px);
+}
+
+.lap-item-lapid {
+  order: -1;
+  font-weight: normal;
+}
+
+.lap-item-elapsedtime {
+  order: 1;
+  color: #de574c;
+}
+
+.lap-item {
+  display: flex;
+  padding: 15px;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  align-items: center;
+  font-family: monospace;
+  border: solid 1px #636363;
+  background-color: #424242;
+  justify-content: space-between;
+  animation: fade-in-horizontal 0.5s ease-out forwards;
+}

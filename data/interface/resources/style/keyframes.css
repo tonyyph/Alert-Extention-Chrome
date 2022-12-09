@@ -1,0 +1,31 @@
+@keyframes fade-in-vertical {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-horizontal {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-horizontal {
+  animation: fade-in-horizontal 0.8s ease-out;
+}

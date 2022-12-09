@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer, Alarm & Stopwatch</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- -->
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <!-- -->
+    <link type="text/css" rel="stylesheet" href="resources/style/page.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/icon.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/alarm.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/timer.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/button.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/snooze.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/toggle.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/footer.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/toolbar.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/tooltip.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/stopwatch.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/navigation.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/validation.css">
+    <link type="text/css" rel="stylesheet" href="resources/style/keyframes.css">
+  </head>
+  <body>
+    <div class="tooltip"></div>
+    <div class="footer">
+      <table>
+        <tr>
+          <td class="reload" title="Reload UI">
+            <svg width="8" height="8" viewBox="0 0 16 16">
+              <g transform="translate(-424.000000, -340.000000)">
+                <g transform="translate(424.000000, 340.000000)">
+                  <path d="M13.6,2.4 C12.2,0.9 10.2,0 8,0 C3.6,0 0,3.6 0,8 C0,12.4 3.6,16 8,16 C11.7,16 14.8,13.4 15.7,10 L13.6,10 C12.8,12.3 10.6,14 8,14 C4.7,14 2,11.3 2,8 C2,4.7 4.7,2 8,2 C9.7,2 11.1,2.7 12.2,3.8 L9,7 L16,7 L16,0 L13.6,2.4 L13.6,2.4 Z"/>
+                </g>
+              </g>
+            </svg>
+          </td>
+          <td class="support" title="Open support page">
+            <svg width="10" height="10" viewBox="0 0 1792 1792">
+              <path d="M1088 1256v240q0 16-12 28t-28 12h-240q-16 0-28-12t-12-28v-240q0-16 12-28t28-12h240q16 0 28 12t12 28zm316-600q0 54-15.5 101t-35 76.5-55 59.5-57.5 43.5-61 35.5q-41 23-68.5 65t-27.5 67q0 17-12 32.5t-28 15.5h-240q-15 0-25.5-18.5t-10.5-37.5v-45q0-83 65-156.5t143-108.5q59-27 84-56t25-76q0-42-46.5-74t-107.5-32q-65 0-108 29-35 25-107 115-13 16-31 16-12 0-25-8l-164-125q-13-10-15.5-25t5.5-28q160-266 464-266 80 0 161 31t146 83 106 127.5 41 158.5z"/>
+            </svg>
+          </td>
+          <td class="donation" title="Make a donation">
+            <svg width="8" height="8" viewBox="-0.709 -11.555 141.732 141.732">
+              <path d="M140.314,37.654C140.314,16.858,123.402,0,102.537,0c-13.744,0-25.77,7.317-32.379,18.255C63.549,7.317,51.521,0,37.777,0 C16.912,0,0,16.858,0,37.654c0,10.821,4.588,20.57,11.922,27.438h-0.01l54.084,51.584c0.992,1.188,2.48,1.945,4.148,1.945 c1.545,0,2.936-0.653,3.92-1.696l54.346-51.833h-0.016C135.729,58.225,140.314,48.476,140.314,37.654"/>
+            </svg>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <aside>
+      <ul class="navigation">
+        <li data-page="timer-page" class="navigation-item"><span>Timer</span></li>
+        <li data-page="alarm-page" class="navigation-item navigation-item-active"><span>Alarm</span></li>
+        <li data-page="stopwatch-page" class="navigation-item"><span>Stopwatch</span></li>
+      </ul>
+    </aside>
+    <main>
+      <div id="snooze-page-edit" class="snooze-page-edit">
+        <span class="snooze-page-edit-close">✖</span>
+        <p class="snooze-page-edit-title">Snooze Time</p>
+        <p>
+          <input id="radio-disable" type="radio" name="snooze" value="disabled" checked>
+          <label for="radio-disable">disabled</label>
+        </p>
+        <p>
+          <input id="radio-five-minutes" type="radio" name="snooze" value="5">
+          <label for="radio-five-minutes">5 minutes</label>
+        </p>
+        <p>
+          <input id="radio-ten-minutes" type="radio" name="snooze" value="10">
+          <label for="radio-ten-minutes">10 minutes</label>
+        </p>
+        <p>
+          <input id="radio-twenty-minutes" type="radio" name="snooze" value="20">
+          <label for="radio-twenty-minutes">20 minutes</label>
+        </p>
+        <p>
+          <input id="radio-thirty-minutes" type="radio" name="snooze" value="30">
+          <label for="radio-thirty-minutes">30 minutes</label>
+        </p>
+        <p>
+          <input id="radio-one-hour" type="radio" name="snooze" value="60">
+          <label for="radio-one-hour">1 hour</label>
+        </p>
+        <p>
+          <input type="button" id="snooze-close" class="button" value="set snooze">
+        </p>
+      </div>
+      <!-- -->
+      <div id="timer-page" class="page timer-page timer-page-no-timers">
+        <div class="toolbar">
+          <span class="timer-page-add-timer">new timer</span>
+        </div>
+        <div class="timer-page-items"></div>
+      </div>
+      <div id="timer-page-edit" class="timer-page-edit">
+        <span class="timer-page-edit-close">✖</span>
+        <p id="timer-validator" class="validation">The minimum time should be 1 minute.</p>
+        <form id="timer-form">
+          <div class="timer-page-edit-name">
+            <span>timer name</span>
+            <input type="text" id="timername" required value=''>
+          </div>
+          <div class="timer-page-edit-time">
+            <div>
+              <span class="timer-page-edit-title">hours</span>
+              <span id="hours-increase">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="3,15.5 12,6.5 21,15.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+              <span id="hours-value" data-type="hours" data-value="0" contenteditable="true">00</span>
+              <span id="hours-decrease">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="21,8.5 12,17.5 3,8.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+            </div>
+            <div class="timer-page-edit-time-colon">:</div>
+            <div>
+              <span class="timer-page-edit-title">minutes</span>
+              <span id="minutes-increase">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="3,15.5 12,6.5 21,15.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+              <span id="minutes-value" data-type="minutes" data-value="0" contenteditable="true">00</span>
+              <span id="minutes-decrease">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="21,8.5 12,17.5 3,8.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+            </div>
+            <div class="timer-page-edit-time-colon">:</div>
+            <div>
+              <span class="timer-page-edit-title">seconds</span>
+              <span id="seconds-increase">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="3,15.5 12,6.5 21,15.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+              <span id="seconds-value" data-type="seconds" data-value="0" contenteditable="true">00</span>
+              <span id="seconds-decrease">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="21,8.5 12,17.5 3,8.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="timer-page-edit-sound-wrapper">
+            <span>sound</span>
+            <div class="timer-page-edit-sounds">
+              <span data-sound="alarm1.mp3" class="timer-page-edit-sound timer-page-edit-sound-active">1</span>
+              <span data-sound="alarm2.mp3" class="timer-page-edit-sound">2</span>
+              <span data-sound="alarm3.mp3" class="timer-page-edit-sound">3</span>
+              <span data-sound="alarm4.mp3" class="timer-page-edit-sound">4</span>
+              <span data-sound="alarm5.mp3" class="timer-page-edit-sound">5</span>
+            </div>
+          </div>
+          <div class="timer-page-edit_options">
+            <input type="submit" id="save-timer" class="button" value="save changes">
+          </div>
+        </form>
+      </div>
+      <!-- -->
+      <div id="alarm-page" class="page alarm-page alarm-page-no-alarms alarm-page-show">
+        <div class="toolbar">
+          <span class="alarm-page-add-alarm">new alarm</span>
+        </div>
+        <div class="alarm-page-items"></div>
+      </div>
+      <div id="alarm-page-edit" class="alarm-page-edit">
+        <span class="alarm-page-edit-close">✖</span>
+        <p class="validation" id="alarm-validator">At least one day must be selected.</p>
+        <form id="alarm-form">
+          <div class="alarm-page-edit-repeat">
+            <input type="checkbox" id="repeat-checkbox">
+            <label for="repeat-checkbox">Repeat weekly</label>
+          </div>
+          <div class="alarm-page-edit-name">
+            <span>alarm name</span>
+            <input type="text" id="alarm-name" value='' required>
+          </div>
+          <div class="alarm-page-edit-date-wrapper">
+            <span>date</span>
+            <div class="alarm-page-edit-dates">
+              <span data-day="0" class="alarm-page-edit-date">S</span>
+              <span data-day="1" class="alarm-page-edit-date">M</span>
+              <span data-day="2" class="alarm-page-edit-date">T</span>
+              <span data-day="3" class="alarm-page-edit-date">W</span>
+              <span data-day="4" class="alarm-page-edit-date">T</span>
+              <span data-day="5" class="alarm-page-edit-date">F</span>
+              <span data-day="6" class="alarm-page-edit-date">S</span>
+            </div>
+          </div>
+          <div class="alarm-page-edit-time">
+            <div>
+              <span class="alarm-page-edit-title">hours</span>
+              <span id="alarm-hours-increase">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="3,15.5 12,6.5 21,15.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+              <span id="alarm-hours-value" data-type="hours" data-value="0" contenteditable="true">00</span>
+              <span id="alarm-hours-decrease">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="21,8.5 12,17.5 3,8.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+            </div>
+            <div class="alarm-page-edit-time-colon">:</div>
+            <div>
+              <span class="alarm-page-edit-title">minutes</span>
+              <span id="alarm-minutes-increase">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="3,15.5 12,6.5 21,15.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+              <span id="alarm-minutes-value" data-type="minutes" data-value="0" contenteditable="true">00</span>
+              <span id="alarm-minutes-decrease">
+                <svg height="12" width="12" viewBox="0 0 24 24">
+                  <polyline fill="none" points="21,8.5 12,17.5 3,8.5" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="alarm-page-edit-sound-wrapper">
+            <span>sound</span>
+            <div class="alarm-page-edit-sounds">
+              <span data-sound="alarm1.mp3" class="alarm-page-edit-sound alarm-page-edit-sound-active">1</span>
+              <span data-sound="alarm2.mp3" class="alarm-page-edit-sound">2</span>
+              <span data-sound="alarm3.mp3" class="alarm-page-edit-sound">3</span>
+              <span data-sound="alarm4.mp3" class="alarm-page-edit-sound">4</span>
+              <span data-sound="alarm5.mp3" class="alarm-page-edit-sound">5</span>
+            </div>
+          </div>
+          <div class="alarm-page-edit-sound-snooze">
+            <input type="button" id="set-snooze" class="button button-dark snooze-button" value="set snooze">
+          </div>
+          <div class="alarm-page-edit_options">
+            <input type="submit" id="save-alarm" class="button" value="save changes">
+          </div>
+        </form>
+      </div>
+      <!-- -->
+      <div id="stopwatch-page" class="page stopwatch-page">
+        <div class="stopwatch-page-timer">
+          <p><span id="lbl-stopwatch" class="time time-lg">00:00:00.000</span></p>
+          <div class="stopwatch-page-buttons">
+            <span id="btn-start-stopwatch" data-stopwatch_options="start" class="button">start</span>
+            <span id="btn-stop-stopwatch" data-stopwatch_options="stop" class="button button-danger">stop</span>
+            <span id="btn-lap-stopwatch" data-stopwatch_options="lap" class="button button-dark">lap</span>
+            <span id="btn-resume-stopwatch" data-stopwatch_options="resume" class="button">resume</span>
+            <span id="btn-reset-stopwatch" data-stopwatch_options="reset" class="button button-danger">reset</span>
+          </div>
+        </div>
+        <div class="stopwatch-page-laps"></div>
+      </div>
+    </main>
+    <!-- -->
+    <script type="text/javascript" src="resources/class/UI.js"></script>
+    <script type="text/javascript" src="resources/class/TIMER.js"></script>
+    <script type="text/javascript" src="resources/class/ALARM.js"></script>
+    <script type="text/javascript" src="resources/class/STOPWATCH.js"></script>
+    <!-- -->
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
